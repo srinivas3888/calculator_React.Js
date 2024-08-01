@@ -1,38 +1,210 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  overflow: hidden;
+  scrollbar-width: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#calc{
+  position: absolute;
+  bottom: 5px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#main{
+  display: grid;
+  grid-template-areas:  "inp"
+                        "row1"
+                        "row2"
+                        "row3"
+                        "row4"
+                        "row5" ;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+.btns{
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  transition-duration: 0.2s;
+  transition-property: all;
+  box-sizing: content-box;
+  field-sizing: content;
+  position: sticky;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1.3px rgb(201, 199, 199);
+}
+.btns:hover{
+  box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+.btns:active{
+  transform: scale(1.14);
+}
+#res{
+  overflow: hidden;
+  scrollbar-width: none;
 }
 
-.App-link {
-  color: #61dafb;
+
+@media screen and (max-width:330px) {
+  .btns{
+    padding: 0.3em 0.8em 1.2em 0.8em;
+    font-size: 1.3em;
+    margin: 1.4em 2.5em 0.15em 2.5em;
+    width: 11px;
+    height: 14px;
+  }
+  #n1{
+    width: 14px;
+    font-size: 1.325em;
+  }
+  #n2{
+    width: 16.8px;
+    font-size: 1.3em;
+
+  }
+  #n3{
+    width: 14px;
+    font-size: 1.325em;
+  }
+  #n4{
+    width: 23px;
+    font-size: 1.36em;
+  }
+  #res{
+    width: 88vw;
+    border-bottom-width: 0.3em;
+  }
+  #i1{
+    width: 81vw;
+    text-align: end;
+    font-size: 2.1em;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* For smaller mobile screens */
+@media screen and (max-width:440px) and (min-width:330px) {
+  .btns{
+    padding: 0.4em 0.8em 1.3em 0.8em;
+    font-size: 1.4em;
+    margin: 1.1em 3em 0.1em 3em;
+    width: 12px;
+    height: 14px;
   }
-  to {
-    transform: rotate(360deg);
+  #n1{
+    width: 14px;
+    font-size: 1.325em;
   }
+  #n2{
+    width: 16.8px;
+    font-size: 1.3em;
+
+  }
+  #n3{
+    width: 14px;
+    font-size: 1.325em;
+  }
+  #n4{
+    width: 23px;
+    font-size: 1.36em;
+  }
+  #res{
+    width: 90vw;
+    border-bottom-width: 0.3em;
+  }
+  #i1{
+    width: 84vw;
+    text-align: end;
+    font-size: 2.2em;
+  }
+}
+
+/* For mobile, Tablet, Laptop screens */
+@media screen and (min-width:440px) {
+  .btns{
+    padding: 0.3em 0.8em 1.6em 0.8em;
+    padding-bottom: 1.15em;
+    font-size: 1.4em;
+    margin: 1em 0.5em 0.3em 0.5em;
+    width: 12px;
+    height: 14px;
+  }
+  #n1{
+    width: 14px;
+    font-size: 1.325em;
+  }
+  #n2{
+    width: 16.8px;
+    font-size: 1.3em;
+
+  }
+  #n3{
+    width: 14px;
+    font-size: 1.325em;
+  }
+  #n4{
+    width: 23px;
+    font-size: 1.36em;
+    margin-right: 0em;
+  }
+  #res{
+    width: 100vw;
+    border-bottom-width: 1px;
+  }
+  #i1{
+    width: 100vw;
+    text-align: center;
+    font-size: 2.5em;
+    position: relative;
+  }
+}
+
+
+.logo{
+  width: 5.65em;
+}
+@keyframes logo {
+  0%{
+      color:greenyellow;;
+  }
+  35%{
+      color: crimson;
+  }
+  70%{
+      color: aqua;
+  }
+}
+.fa-solid{
+  animation-name: logo;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  transition-property: all;
+  transition-duration: 0.35s;
+}
+@keyframes slide {
+  0%{
+      transform: translateX(0);
+  }
+  100%{
+      transform: translateX(2.85em);
+  }
+}
+#hid{
+  animation-name: slide;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  width: 2.8em;
+  height: 0.96em;
+  background-color: white;
+  z-index: 1;
+  position: absolute;
 }

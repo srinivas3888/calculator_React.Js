@@ -2,12 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Favicon -->
+    <link rel="icon" href="fav.png" type="image/png">
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#87CEEB" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Calculator Website created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -24,10 +26,23 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Calculator</title>
+
+    <!-- TailwindCss src file -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/App.css">
+
+    <!-- FontAwsome Icons -->
+    <script src="https://kit.fontawesome.com/b0cf548c33.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Logo -->
+  <div style="font-size: 2.5em; position: relative; display: flex; justify-content: center;">
+    <div style="font-size: 0.6em; font-weight: 600; color: blue; position: absolute; z-index: 0;">Calculator</div>
+    <div id="hid"></div>
+</div>
+
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
